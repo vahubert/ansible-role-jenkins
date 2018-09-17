@@ -1,11 +1,12 @@
 ---
 - name: Ensure dependencies are installed.
   yum:
-    name:
+    raw: "yum install -y {{ item }}"
+  with_items:
       - curl
       - libselinux-python
       - initscripts
-    state: present
+    # state: present
 
 - name: Ensure Jenkins repo is installed.
   get_url:
@@ -31,9 +32,11 @@
   when: jenkins_version is defined
 
 - name: Install our specific version of Jenkins.
-  yum:
-    name: "/tmp/jenkins-{{ jenkins_version }}-1.1.noarch.rpm"
-    state: present
+  # yum:
+  #   name: "/tmp/jenkins-{{ jenkins_version }}-1.1.noarch.rpm"
+  #   state: present
+  raw: "rpm -i /tmp/jenkins-{{ jenkins_version }}-1.1.noarch.rpm"
+
   when: jenkins_version is defined and specific_version.stat.exists
   notify: configure default users
 
@@ -41,4 +44,5 @@
   yum:
     name: jenkins
     state: "{{ jenkins_package_state }}"
+  raw: "yum install -y jenkins"
   notify: configure default users
