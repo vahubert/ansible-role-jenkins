@@ -1,6 +1,6 @@
 ---
 dependencies:
-  - geerlingguy.java
+  - vahubert.java
 
 galaxy_info:
   role_name: jenkins
