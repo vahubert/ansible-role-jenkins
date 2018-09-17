@@ -3,7 +3,8 @@ dependencies:
   - geerlingguy.java
 
 galaxy_info:
-  author: geerlingguy
+  role_name: jenkins
+  author: vahubert
   description: Jenkins CI
   company: "Midwestern Mac, LLC"
   license: "license (BSD, MIT)"
