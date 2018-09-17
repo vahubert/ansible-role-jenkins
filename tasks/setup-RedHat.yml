@@ -41,8 +41,8 @@
   notify: configure default users
 
 - name: Ensure Jenkins is installed.
-  yum:
-    name: jenkins
-    state: "{{ jenkins_package_state }}"
+  # yum:
+  #   name: jenkins
+  #   state: "{{ jenkins_package_state }}"
   raw: "yum install -y jenkins"
   notify: configure default users
