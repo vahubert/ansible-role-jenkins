@@ -71,4 +71,7 @@
     validate_certs: "{{ jenkins_plugins_validate_certs }}"
   with_items: "{{ jenkins_plugins }}"
   when: jenkins_admin_token != ""
-  notify: restart jenkins
+  notify:
+    - configure default users
+    - check xml config
+    - restart jenkins

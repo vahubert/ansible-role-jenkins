@@ -50,5 +50,3 @@
   raw: "yum install -y jenkins"
   notify:
     - configure default users
-    - check xml config
-    - restart jenkins

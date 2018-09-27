@@ -47,5 +47,3 @@
     state: "{{ jenkins_package_state }}"
   notify:
     - configure default users
-    - check xml config
-    - restart jenkins
