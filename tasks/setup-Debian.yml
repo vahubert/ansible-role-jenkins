@@ -41,4 +41,7 @@
   apt:
     name: jenkins
     state: "{{ jenkins_package_state }}"
-  notify: configure default users
+  notify:
+    - configure default users
+    - check xml config
+    - restart jenkins

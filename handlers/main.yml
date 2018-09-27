@@ -10,3 +10,9 @@
     group: "{{ jenkins_process_group }}"
     mode: 0775
   register: jenkins_users_config
+
+- name: check xml config
+  xml:
+    path: "{{ jenkins_home }}/config.xml"
+    xpath: '/hudson/numExecutors'
+    value: "{{ jenkins_num_executors }}"
