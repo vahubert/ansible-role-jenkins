@@ -11,5 +11,5 @@
     - include_tasks: java-8.yml
 
   roles:
-    - geerlingguy.java
+    - vahubert.java
     - role_under_test
