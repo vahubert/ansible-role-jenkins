@@ -1,4 +1,8 @@
 ---
+- name: Ensure Script packages are installed.
+  raw: "yum install -y {{ java_packages }}"
+  with_items: "{{ script_packages }}"
+  
 - name: Ensure dependencies are installed.
   raw: "yum install -y {{ item }}"
   with_items:
