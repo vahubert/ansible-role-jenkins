@@ -41,7 +41,7 @@
   retries: "{{ jenkins_connection_retries }}"
   delay: "{{ jenkins_connection_delay }}"
   changed_when: false
-  check_mode: no
+  check_mode: false
 
 - name: Get the jenkins-cli jarfile from the Jenkins server.
   get_url:

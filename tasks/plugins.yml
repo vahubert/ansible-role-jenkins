@@ -4,25 +4,25 @@
   slurp:
     src: "{{ jenkins_admin_password_file }}"
   register: adminpasswordfile
-  false_log: True
+  false_log: true
   when: jenkins_admin_password_file != ""
 
 - name: Set Jenkins admin password fact.
   set_fact:
     jenkins_admin_password: "{{ adminpasswordfile['stdout'] | default(jenkins_admin_password) }}"
-  false_log: True
+  false_log: true
 
 - name: Get Jenkins admin token from file.
   slurp:
     src: "{{ jenkins_admin_token_file }}"
   register: admintokenfile
-  false_log: True
+  false_log: true
   when: jenkins_admin_token_file != ""
 
 - name: Set Jenkins admin token fact.
   set_fact:
     jenkins_admin_token: "{{ admintokenfile['stdout'] | default(jenkins_admin_token) }}"
-  false_log: True
+  false_log: true
 
 # Update Jenkins so that plugin updates don't fail.
 - name: Create update directory
