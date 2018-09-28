@@ -7,8 +7,8 @@
     - include_tasks: java-8.yml
 
   roles:
-    - role: geerlingguy.java
-    - role: geerlingguy.jenkins
+    - role: java
+    - role: jenkins
 
   post_tasks:
     - name: Check if Jenkins is running.
