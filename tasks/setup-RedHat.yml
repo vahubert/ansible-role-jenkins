@@ -5,11 +5,11 @@
 
 - name: Ensure dependencies are installed.
   # raw: "yum install -y {{ item }}"
-  yum: "name={{ item }} state=present"  
+  yum: "name={{ item }} state=present"
   with_items:
-      - curl
-      - libselinux-python
-      - initscripts
+    - curl
+    - libselinux-python
+    - initscripts
     # state: present
 
 - name: Ensure Jenkins repo is installed.
