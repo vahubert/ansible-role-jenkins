@@ -7,7 +7,7 @@
     jenkins_version: "1.644"
 
   roles:
-    - java
+    - vahubert.java
     - jenkins
 
   post_tasks:

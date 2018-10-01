@@ -6,15 +6,15 @@ env:
   global:
     - ROLE_NAME: jenkins
   matrix:
-    # Test defaults.
     - MOLECULE_DISTRO: centos7
       MOLECULE_DOCKER_COMMAND: /usr/lib/systemd/systemd
+
     - MOLECULE_DISTRO: ubuntu1604
       MOLECULE_DOCKER_COMMAND: /lib/systemd/systemd
+
     - MOLECULE_DISTRO: debian9
       MOLECULE_DOCKER_COMMAND: /lib/systemd/systemd
 
-    # Test other role features.
     - MOLECULE_DISTRO: ubuntu1604
       MOLECULE_DOCKER_COMMAND: /lib/systemd/systemd
       MOLECULE_PLAYBOOK: playbook-http-port.yml

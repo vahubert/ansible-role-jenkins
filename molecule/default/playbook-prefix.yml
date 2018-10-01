@@ -10,7 +10,7 @@
     - include_tasks: java-8.yml
 
   roles:
-    - java
+    - vahubert.java
     - jenkins
 
   post_tasks:
